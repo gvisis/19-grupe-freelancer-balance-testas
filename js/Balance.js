@@ -29,11 +29,19 @@ class Balance{
     }
 
     generateTotal(){
+        let totalIncome = 0;
+        let totalExpenses = 0;
+        
+        
+        for (let {income, expense} of this.data){
+            totalIncome += income
+            totalExpenses += expense;
+        }
         const HTML = `<div class="cell"></div>
             <div class="cell"></div>
-            <div class="cell">0.00 Eur</div>
-            <div class="cell">0.00 Eur</div>
-            <div class="cell">0.00 Eur</div>`
+            <div class="cell">${totalIncome.toFixed(2)} Eur</div>
+            <div class="cell">${totalExpenses.toFixed(2)} Eur</div>
+            <div class="cell">150.00 Eur</div>`
         return HTML;
     }
 
